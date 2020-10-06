@@ -4,12 +4,12 @@ using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 
-
 public class GameController : MonoBehaviour
 {
     private CubePos nowCube = new CubePos(0, 1, 0);  // объект на основе структуры, виден только внутри скрипта, тип данных такой же как в структуре 
     public float cubeChangePlaceSpeed = 0.5f; // переменная отвечает за то как быстро новый кубик будет менять свою позицию
     public Transform cubeToPlace; // пеерменная с типом данных 
+    private float camMoveToYPosition, camMoveSpeed = 2f;
 
     public GameObject cubeToCreate, allCubes;
     public GameObject[] canvasStartPage; //массив
@@ -31,17 +31,21 @@ public class GameController : MonoBehaviour
         new Vector3(1, 0, -1),
     };
 
+    private Transform mainCam;
     private Coroutine showCubePlace;
 
     private void Start() //функция старт
     {
+        mainCam = Camera.main.transform; // переменная с записью к основной камере 
+        camMoveToYPosition = 5.9f + nowCube.y - 1f;// значение в саму пременную
+
         allCubesRb = allCubes.GetComponent<Rigidbody>();
         showCubePlace = StartCoroutine(ShowCubePlace()); //функция куратина (постояно менял через какое то время  позицию где можно установить куб)
     }
 
     private void Update()
     {
-        if((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && cubeToPlace != null && !EventSystem.current.IsPointerOverGameObject())
+        if((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && cubeToPlace != null  && allCubes != null && !EventSystem.current.IsPointerOverGameObject())
         {
 #if !UNITY_EDITOR
             if (Input.GetTouch(0).phase != TouchPhase.Began)
@@ -67,6 +71,7 @@ public class GameController : MonoBehaviour
             allCubesRb.isKinematic = false;
 
             SpawnPosition();
+            MoveCameraChangeBg(); // проверяем какоц у нас сейчас максимальный кубик и передвигать камеру
         }
 
         if(!IsLose && allCubesRb.velocity.magnitude > 0.1f)
@@ -76,6 +81,9 @@ public class GameController : MonoBehaviour
             StopCoroutine(showCubePlace);
 
         }
+        mainCam.localPosition = Vector3.MoveTowards(mainCam.localPosition,
+            new Vector3(mainCam.localPosition.x, camMoveToYPosition, mainCam.localPosition.z),
+            camMoveSpeed * Time.deltaTime);
     }
 
     IEnumerator ShowCubePlace() // куратина
@@ -136,6 +144,25 @@ public class GameController : MonoBehaviour
         }
         return true;
     }
+
+    private void MoveCameraChangeBg()
+    {
+        int maxX = 0, maxY = 0, maxZ = 0; //список allCebesPositions перебираем и находим максимальный элемент по каждой кардинате 
+
+        foreach(Vector3 pos in allCubesPositions)
+        {
+            if (Mathf.Abs(Convert.ToInt32(pos.x)) > maxX) // нахождение максимального элемента по координат x
+                maxX = Convert.ToInt32(pos.x);
+
+            if (Convert.ToInt32(pos.y) > maxY)
+                maxY = Convert.ToInt32(pos.y);
+
+            if (Mathf.Abs(Convert.ToInt32(pos.z)) > maxZ)
+                maxZ = Convert.ToInt32(pos.z);
+        }
+        camMoveToYPosition = 5.9f + nowCube.y - 1f;
+    }
+
 }
 
 struct CubePos // отвечает за хранение кординат обЪекта
