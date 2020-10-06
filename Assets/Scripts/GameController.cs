@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     public Transform cubeToPlace; // пеерменная с типом данных 
 
     public GameObject cubeToCreate, allCubes;
-    public GameObject[] canvasStartPage;
+    public GameObject[] canvasStartPage; //массив
     private Rigidbody allCubesRb;
 
     private bool IsLose, firstCube;
@@ -47,11 +47,11 @@ public class GameController : MonoBehaviour
             if (Input.GetTouch(0).phase != TouchPhase.Began)
                 return;
 #endif
-            if(!firstCube)
+            if(!firstCube) //нажатие на экран и все элементы скрыть 
             {
                 firstCube = true;
                 foreach (GameObject obj in canvasStartPage)
-                    Destroy(obj);
+                    Destroy(obj); //удаление при запуске игры
             }
 
            GameObject newCube = Instantiate(
