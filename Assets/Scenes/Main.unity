@@ -924,7 +924,15 @@ MonoBehaviour:
   cubeToPlace: {fileID: 704502997}
   cubeToCreate: {fileID: 4103096860203490013, guid: 763cdf69b5bdb62419ba16fa67512342, type: 3}
   allCubes: {fileID: 765224183}
-  canvasStartPage: []
+  canvasStartPage:
+  - {fileID: 1855668802}
+  - {fileID: 1405413881}
+  - {fileID: 289970081}
+  - {fileID: 859732348}
+  bgColors:
+  - {r: 0.9245283, g: 0, b: 0.068104625, a: 0.99215686}
+  - {r: 0.5998904, g: 0.021359911, b: 0.9056604, a: 1}
+  - {r: 0.056114297, g: 0.30773214, b: 0.9150943, a: 1}
 --- !u!4 &1073353578
 Transform:
   m_ObjectHideFlags: 0
