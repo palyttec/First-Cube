@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour
     public GameObject[] canvasStartPage; //массив
     private Rigidbody allCubesRb;
 
+    public Color[] bgColors;
+    private Color toCameraColor;
+
     private bool IsLose, firstCube;
 
     private List<Vector3> allCubesPositions = new List<Vector3>() //динамический список состоящий из позиций векторов 
@@ -37,6 +40,7 @@ public class GameController : MonoBehaviour
 
     private void Start() //функция старт
     {
+        toCameraColor = Camera.main.backgroundColor;
         mainCam = Camera.main.transform; // переменная с записью к основной камере 
         camMoveToYPosition = 5.9f + nowCube.y - 1f;// значение в саму пременную
 
@@ -85,6 +89,9 @@ public class GameController : MonoBehaviour
         mainCam.localPosition = Vector3.MoveTowards(mainCam.localPosition,
             new Vector3(mainCam.localPosition.x, camMoveToYPosition, mainCam.localPosition.z),
             camMoveSpeed * Time.deltaTime);
+
+        if (Camera.main.backgroundColor != toCameraColor)
+            Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, toCameraColor, Time.deltaTime / 1.5f);
     }
 
     IEnumerator ShowCubePlace() // куратина
@@ -173,6 +180,13 @@ public class GameController : MonoBehaviour
             mainCam.localPosition -= new Vector3(0, 0, 2.5f);
             prevCountMaxHorizon = maxHor;
         }
+
+        if (maxY >= 15)
+            toCameraColor = bgColors[2];
+        else if (maxY >= 10)
+            toCameraColor = bgColors[1];
+        else if (maxY >= 5)
+            toCameraColor = bgColors[0];
     }
 
 }
