@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
 
@@ -10,6 +11,8 @@ public class GameController : MonoBehaviour
     public float cubeChangePlaceSpeed = 0.5f; // переменная отвечает за то как быстро новый кубик будет менять свою позицию
     public Transform cubeToPlace; // пеерменная с типом данных 
     private float camMoveToYPosition, camMoveSpeed = 2f;
+
+    public Text scoreTxt;
 
     public GameObject cubeToCreate, allCubes, vfx;
     public GameObject[] canvasStartPage; //массив
@@ -40,6 +43,7 @@ public class GameController : MonoBehaviour
 
     private void Start() //функция старт
     {
+        scoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score") + "<size=32>\nnow:</size> 0";
         toCameraColor = Camera.main.backgroundColor;
         mainCam = Camera.main.transform; // переменная с записью к основной камере 
         camMoveToYPosition = 5.9f + nowCube.y - 1f;// значение в саму пременную
@@ -178,6 +182,12 @@ public class GameController : MonoBehaviour
             if (Mathf.Abs(Convert.ToInt32(pos.z)) > maxZ)
                 maxZ = Convert.ToInt32(pos.z);
         }
+        maxY--;
+        if (PlayerPrefs.GetInt("score") < maxY)
+            PlayerPrefs.SetInt("score", maxY);
+
+        scoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score") + "<size=32>now:</size> " + maxY;
+
         camMoveToYPosition = 5.9f + nowCube.y - 1f;
 
         maxHor = maxX > maxZ ? maxX : maxZ;
