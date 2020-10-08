@@ -72,7 +72,12 @@ public class GameController : MonoBehaviour
             nowCube.setVector(cubeToPlace.position);
             allCubesPositions.Add(nowCube.getVector());
 
-            Instantiate(vfx, cubeToPlace.position, Quaternion.identity);
+            if (PlayerPrefs.GetString("music") != "No")
+                GetComponent<AudioSource>().Play();
+
+            GameObject newvfx = Instantiate(vfx, cubeToPlace.position, Quaternion.identity) as GameObject;
+            Destroy(newvfx, 1.5f);
+
             allCubesRb.isKinematic = true;
             allCubesRb.isKinematic = false;
 
