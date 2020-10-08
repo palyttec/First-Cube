@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public Transform cubeToPlace; // пеерменная с типом данных 
     private float camMoveToYPosition, camMoveSpeed = 2f;
 
-    public GameObject cubeToCreate, allCubes;
+    public GameObject cubeToCreate, allCubes, vfx;
     public GameObject[] canvasStartPage; //массив
     private Rigidbody allCubesRb;
 
@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
             nowCube.setVector(cubeToPlace.position);
             allCubesPositions.Add(nowCube.getVector());
 
+            Instantiate(vfx, cubeToPlace.position, Quaternion.identity);
             allCubesRb.isKinematic = true;
             allCubesRb.isKinematic = false;
 
