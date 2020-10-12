@@ -29,6 +29,22 @@ public class CanvasButtons : MonoBehaviour
         Application.OpenURL("https://instagram.com/burya_game?igshid=1sjym9bbmnefp");
     }
 
+    public void LoadShop()
+    {
+        if (PlayerPrefs.GetString("music") != "No")
+            GetComponent<AudioSource>().Play();
+
+        SceneManager.LoadScene("Shop");
+    }
+
+    public void CloseShop()
+    {
+        if (PlayerPrefs.GetString("music") != "No")
+            GetComponent<AudioSource>().Play();
+
+        SceneManager.LoadScene("Main");
+    }
+
     public void MusicWork()
     {
         //Сейчас музыка выключена и ее нужно включить 

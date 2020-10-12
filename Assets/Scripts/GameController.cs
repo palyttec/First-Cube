@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && cubeToPlace != null  && allCubes != null && !EventSystem.current.IsPointerOverGameObject())
+        if((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && cubeToPlace != null  && allCubes != null && !EventSystem.current.IsPointerOverGameObject()) 
         {
 #if !UNITY_EDITOR
             if (Input.GetTouch(0).phase != TouchPhase.Began)
@@ -89,11 +89,11 @@ public class GameController : MonoBehaviour
             MoveCameraChangeBg(); // проверяем какоц у нас сейчас максимальный кубик и передвигать камеру
         }
 
-        if(!IsLose && allCubesRb.velocity.magnitude > 0.1f)
+        if(!IsLose && allCubesRb.velocity.magnitude > 0.1f) //является ли башня стабильна если он начинается крениться
         {
             Destroy(cubeToPlace.gameObject);
             IsLose = true;
-            StopCoroutine(showCubePlace);
+            StopCoroutine(showCubePlace); //
 
         }
         mainCam.localPosition = Vector3.MoveTowards(mainCam.localPosition,
