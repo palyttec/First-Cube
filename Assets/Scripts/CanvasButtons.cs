@@ -40,7 +40,10 @@ public class CanvasButtons : MonoBehaviour
     public void CloseShop()
     {
         if (PlayerPrefs.GetString("music") != "No")
-            GetComponent<AudioSource>().Play();
+        {
+            var audioSource = GetComponent<AudioSource>();
+            audioSource.Play();
+        }
 
         SceneManager.LoadScene("Main");
     }
