@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -226.77, y: -101.98999}
+  m_AnchoredPosition: {x: -226.77002, y: -101.98999}
   m_SizeDelta: {x: 378.26694, y: 126.42334}
   m_Pivot: {x: 0.5000002, y: 0.5}
 --- !u!114 &25135145
@@ -1006,7 +1006,16 @@ MonoBehaviour:
   cubeChangePlaceSpeed: 0.5
   cubeToPlace: {fileID: 704502997}
   scoreTxt: {fileID: 25135145}
-  cubeToCreate: {fileID: 4103096860203490013, guid: 763cdf69b5bdb62419ba16fa67512342, type: 3}
+  cubesToCreate:
+  - {fileID: 4103096860203490013, guid: 763cdf69b5bdb62419ba16fa67512342, type: 3}
+  - {fileID: 432292582729872395, guid: e91c8f4920f99bd4cb5c87f81a52dc38, type: 3}
+  - {fileID: 9185030288907268465, guid: 859098018d6da0d4d8701db5a3de11b7, type: 3}
+  - {fileID: 4551990830784232065, guid: e73276bdd85d9a14aa9a4a8f6a522659, type: 3}
+  - {fileID: 6066740882171816000, guid: 77d7bfaf7cf4c5b448da60d5db6fa90a, type: 3}
+  - {fileID: 7121423115471544746, guid: 1a9b831ca45c3cd47aaf1d1ebf86a675, type: 3}
+  - {fileID: 8637726321992317550, guid: 6932e6822ca323942a9ab5f04123b4ed, type: 3}
+  - {fileID: 3036466414807499594, guid: b6eb289b4a2049c4ab6b869ac5add59e, type: 3}
+  - {fileID: 121648376840377878, guid: 3345190af05578445bb80f3a6481b68f, type: 3}
   allCubes: {fileID: 765224183}
   vfx: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
   canvasStartPage:
