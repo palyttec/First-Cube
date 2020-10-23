@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best :  150'
+  m_Text: 'Best :  300'
 --- !u!222 &66653199
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a696493eeb6e8414dbd7bf2523df503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needToUnLock: 50
+  needToUnLock: 150
   blackMaterial: {fileID: 2100000, guid: d41842c979a5dd64bb497124f588aa88, type: 2}
 --- !u!23 &508893384
 MeshRenderer:
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a696493eeb6e8414dbd7bf2523df503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needToUnLock: 150
+  needToUnLock: 300
   blackMaterial: {fileID: 2100000, guid: d41842c979a5dd64bb497124f588aa88, type: 2}
 --- !u!23 &519057222
 MeshRenderer:
@@ -637,7 +637,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best :  100'
+  m_Text: 'Best :  250'
 --- !u!222 &665526422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -698,7 +698,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 08ebc4910f98cf1429208281f3a6f87f, type: 2}
+  - {fileID: 2100000, guid: 7f46332a5a2128949855e5a75ea5ab9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a696493eeb6e8414dbd7bf2523df503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needToUnLock: 30
+  needToUnLock: 100
   blackMaterial: {fileID: 2100000, guid: d41842c979a5dd64bb497124f588aa88, type: 2}
 --- !u!23 &744094900
 MeshRenderer:
@@ -975,7 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a696493eeb6e8414dbd7bf2523df503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needToUnLock: 20
+  needToUnLock: 60
   blackMaterial: {fileID: 2100000, guid: d41842c979a5dd64bb497124f588aa88, type: 2}
 --- !u!23 &896746965
 MeshRenderer:
@@ -1060,8 +1060,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -158}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5, y: -158}
+  m_SizeDelta: {x: 184.0683, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935036774
 MonoBehaviour:
@@ -1096,7 +1096,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best :  30'
+  m_Text: 'Best :  100'
 --- !u!222 &935036775
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1312,7 +1312,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 08ebc4910f98cf1429208281f3a6f87f, type: 2}
+  - {fileID: 2100000, guid: fb18b54f25690d74881ef66b700b8402, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1376,8 +1376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -245, y: -158}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -253, y: -166.4}
+  m_SizeDelta: {x: 186.6448, y: 46.79744}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102083200
 MonoBehaviour:
@@ -1404,15 +1404,15 @@ MonoBehaviour:
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 60
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best :  20'
+  m_Text: 'Best :  60'
 --- !u!222 &1102083201
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a696493eeb6e8414dbd7bf2523df503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needToUnLock: 100
+  needToUnLock: 250
   blackMaterial: {fileID: 2100000, guid: d41842c979a5dd64bb497124f588aa88, type: 2}
 --- !u!23 &1134570806
 MeshRenderer:
@@ -1662,7 +1662,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 08ebc4910f98cf1429208281f3a6f87f, type: 2}
+  - {fileID: 2100000, guid: 725fa8a3fd4083442af9805b08a97f16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1726,8 +1726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -559}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -255.8, y: -562.31}
+  m_SizeDelta: {x: 184.07968, y: 36.617012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575859530
 MonoBehaviour:
@@ -1762,7 +1762,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best :  80'
+  m_Text: 'Best :  200'
 --- !u!222 &1575859531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a696493eeb6e8414dbd7bf2523df503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needToUnLock: 80
+  needToUnLock: 200
   blackMaterial: {fileID: 2100000, guid: d41842c979a5dd64bb497124f588aa88, type: 2}
 --- !u!23 &1607106373
 MeshRenderer:
@@ -2001,8 +2001,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: -158}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 254.9, y: -158}
+  m_SizeDelta: {x: 179.8252, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1804122758
 MonoBehaviour:
@@ -2037,7 +2037,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Best :  50'
+  m_Text: 'Best :  150'
 --- !u!222 &1804122759
 CanvasRenderer:
   m_ObjectHideFlags: 0
