@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
 
     private bool IsLose, firstCube;
 
-    private List<Vector3> allCubesPositions = new List<Vector3>() //динамический список состоящий из позиций векторов 
+    private List<Vector3> allCubesPositions = new List<Vector3> //динамический список состоящий из позиций векторов 
     {
         new Vector3(0, 0, 0), // все кооординаты на которых есть определенные кубы
         new Vector3(1, 0, 0),
@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
         new Vector3(1, 0, -1),
     };
 
-    private int prevCountMaxHorizon;
+    private int prevCountMaxHorizontal;
     private Transform mainCam;
     private Coroutine showCubePlace;
 
@@ -204,7 +204,7 @@ public class GameController : MonoBehaviour
             if (Mathf.Abs(Convert.ToInt32(pos.x)) > maxX) // нахождение максимального элемента по координат x
                 maxX = Convert.ToInt32(pos.x);
 
-            if (Convert.ToInt32(pos.y) > maxY)
+            if (Mathf.Abs(Convert.ToInt32(pos.y)) > maxY)
                 maxY = Convert.ToInt32(pos.y);
 
             if (Mathf.Abs(Convert.ToInt32(pos.z)) > maxZ)
@@ -214,15 +214,15 @@ public class GameController : MonoBehaviour
         if (PlayerPrefs.GetInt("score") < maxY)
             PlayerPrefs.SetInt("score", maxY);
 
-        scoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score") + "<size=32>now:</size> " + maxY;
+        scoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score") + " <size=32>now:</size> " + maxY;
 
         camMoveToYPosition = 5.9f + nowCube.y - 1f;
 
         maxHor = maxX > maxZ ? maxX : maxZ;
-        if(maxHor % 3 == 0 && prevCountMaxHorizon != maxHor)
+        if(maxHor % 3 == 0 && prevCountMaxHorizontal != maxHor)
         {
-            mainCam.localPosition -= new Vector3(0, 0, 2.5f);
-            prevCountMaxHorizon = maxHor;
+            mainCam.localPosition -= new Vector3(0, 0, 3f);
+            prevCountMaxHorizontal = maxHor;
         }
 
         if (maxY >= 15)
