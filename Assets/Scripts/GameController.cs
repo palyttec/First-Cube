@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
+using System.Globalization;
 
 public class GameController : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class GameController : MonoBehaviour
     public Transform cubeToPlace; // пеерменная с типом данных 
     private float camMoveToYPosition, camMoveSpeed = 2f;
 
-    public Text scoreTxt;
+    public Text bestScoreTxt;
+    public Text nowScoreTxt;
 
     public GameObject[] cubesToCreate;
 
@@ -65,7 +67,8 @@ public class GameController : MonoBehaviour
         else 
             AddPossibleCubes(9);
 
-        scoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score") + "<size=32>\nnow:</size> 0";
+        bestScoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score");
+        nowScoreTxt.text = "  ";
         toCameraColor = Camera.main.backgroundColor;
         mainCam = Camera.main.transform; // переменная с записью к основной камере 
         camMoveToYPosition = 5.9f + nowCube.y - 1f;// значение в саму пременную
@@ -85,6 +88,7 @@ public class GameController : MonoBehaviour
             if(!firstCube) //нажатие на экран и все элементы скрыть 
             {
                 firstCube = true;
+                
                 foreach (GameObject obj in canvasStartPage)
                     Destroy(obj); //удаление при запуске игры
             }
@@ -214,7 +218,8 @@ public class GameController : MonoBehaviour
         if (PlayerPrefs.GetInt("score") < maxY)
             PlayerPrefs.SetInt("score", maxY);
 
-        scoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score") + " <size=32>now:</size> " + maxY;
+        bestScoreTxt.text = "<size=40>Best:</size> " + PlayerPrefs.GetInt("score");  
+        nowScoreTxt.text = " " + maxY;
 
         camMoveToYPosition = 5.9f + nowCube.y - 1f;
 
