@@ -1,12 +1,9 @@
-﻿
-using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ExplodeCubes : MonoBehaviour
 {
     public GameObject restartButton, explosion;
     private bool _collisionSet;
-   
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -20,8 +17,8 @@ public class ExplodeCubes : MonoBehaviour
                 child.SetParent(null);
             }
             restartButton.SetActive(true);
-            
-            Camera.main.gameObject.transform.position -= new Vector3 (5f, 0, 0);
+            Camera.main.transform.position = new Vector3(0f, 5.9f, -10f);
+                //Camera.main.gameObject.transform.position -= new Vector3 (5f, 0, 0);
             Camera.main.gameObject.AddComponent<CameraShake>();
 
             GameObject newvfx = Instantiate(explosion, new Vector3(collision.contacts[0].point.x, collision.contacts[0].point.y, collision.contacts[0].point.z), Quaternion.identity) as GameObject;
